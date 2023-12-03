@@ -49,8 +49,6 @@ router.get("category/:catName", async (req, res) => {
     let page = req.query.page || 1;
 
     try {
-        let queryS = req.query.s;
-        let searchReg = new RegExp(queryS, "i")
         let data = await ToyModel.find({ category: catName })
             .limit(perPage)
             .skip((page - 1) * perPage);
