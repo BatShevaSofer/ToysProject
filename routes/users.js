@@ -3,6 +3,7 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const { UserModel, userValid, loginValid, createToken } = require("../models/userModel");
 const { auth, authAdmin } = require("../middlewares/auth");
+const { toyValid } = require("../models/toyModel");
 const router = express.Router();
 
 
