@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")))
 
-routesInit(app);
+routesInit(app);//1
 
 const server = http.createServer(app);
 console.log("env", process.env.TEST, process.env.USER_DB);
