@@ -205,7 +205,7 @@ router.delete("/:idDel", auth, async (req, res) => {
         if (data.modifiedCount == 0) {
             // console.log("Error updating, You are trying to do an operation that is not enabled!");
             // res.status(555).json({ msg: "Error updating, You are trying to do an operation that is not enabled!" })
-            data = [{ msg: "Error updating, You are trying to do an operation that is not enabled! or you don't change nothing..." }];
+            data = [{ msg: "Error deleting, You are trying to do an operation that is not enabled!" }];
             status = [{
                 status: "failed",
                 msg: "an enable operation"
