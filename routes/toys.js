@@ -212,7 +212,7 @@ router.delete("/:idDel", auth, async (req, res) => {
             }];
         }
         if(data.deletedCount == 0){
-            data = [{ msg: "The toys is not exist" }];
+            data = [{ msg: "The toy is not exist" }];
 
             // data = [{msg:"" }];
             status = [{
