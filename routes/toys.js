@@ -196,7 +196,7 @@ router.delete("/:idDel", auth, async (req, res) => {
         }
         else //if (idEdit == req.tokenData.user_id) {
         {
-            data = await ToyModel.updateOne({ _id: idDel, user_id: req.tokenData.user_id });
+            data = await ToyModel.deleteOne({ _id: idDel, user_id: req.tokenData.user_id });
             status = [{
                 status: "200 success",
                 msg: "an user operation"
@@ -209,6 +209,14 @@ router.delete("/:idDel", auth, async (req, res) => {
             status = [{
                 status: "failed",
                 msg: "an enable operation"
+            }];
+        }
+        if(data.deletedCount == 0){
+            data = [{ msg: "The toys is not exist" }];
+
+            // data = [{msg:"" }];
+            status = [{
+                status: "not found"
             }];
         }
         res.json([{
